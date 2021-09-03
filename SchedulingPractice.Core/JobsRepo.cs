@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -27,7 +26,7 @@ namespace SchedulingPractice.Core
 
             if (string.IsNullOrEmpty(connstr))
             {
-                this._conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=JobsDB;Integrated Security=True;");
+                this._conn = new SqlConnection(@"Data Source=.\sqlserver2017;Initial Catalog=JobsDB;Persist Security Info=True;User ID=sa;Password=kl314275;Timeout=200");
             }
             else
             {
