@@ -90,6 +90,7 @@ select @id;
 
         public bool AcquireJobLock(int jobId)
         {
+
             return this._conn.Execute(
                 @"
 update [jobs] set state = 1, lockat = getdate() where id = @id and state = 0 and lockat is NULL;
